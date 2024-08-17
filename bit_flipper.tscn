@@ -1,0 +1,112 @@
+[gd_scene load_steps=4 format=3 uid="uid://dc4dah6xp2mdj"]
+
+[ext_resource type="PackedScene" uid="uid://b2etxvjly1m8l" path="res://bit.tscn" id="1_50kpx"]
+[ext_resource type="Script" path="res://BitFlipper.cs" id="1_yj0cp"]
+[ext_resource type="Script" path="res://ResetButton.cs" id="3_meb2e"]
+
+[node name="BitFlipper" type="Node2D"]
+script = ExtResource("1_yj0cp")
+
+[node name="bit_1" parent="." instance=ExtResource("1_50kpx")]
+offset_left = 480.0
+offset_top = 48.0
+offset_right = 520.0
+offset_bottom = 88.0
+value = 1
+
+[node name="bit_2" parent="." instance=ExtResource("1_50kpx")]
+offset_left = 416.0
+offset_top = 48.0
+offset_right = 456.0
+offset_bottom = 88.0
+value = 2
+
+[node name="bit_4" parent="." instance=ExtResource("1_50kpx")]
+offset_left = 352.0
+offset_top = 48.0
+offset_right = 392.0
+offset_bottom = 88.0
+value = 4
+
+[node name="bit_8" parent="." instance=ExtResource("1_50kpx")]
+offset_left = 288.0
+offset_top = 48.0
+offset_right = 328.0
+offset_bottom = 88.0
+value = 8
+
+[node name="bit_16" parent="." instance=ExtResource("1_50kpx")]
+offset_left = 224.0
+offset_top = 48.0
+offset_right = 264.0
+offset_bottom = 88.0
+value = 16
+
+[node name="bit_32" parent="." instance=ExtResource("1_50kpx")]
+offset_left = 160.0
+offset_top = 48.0
+offset_right = 200.0
+offset_bottom = 88.0
+value = 32
+
+[node name="bit_64" parent="." instance=ExtResource("1_50kpx")]
+offset_left = 96.0
+offset_top = 48.0
+offset_right = 136.0
+offset_bottom = 88.0
+value = 64
+
+[node name="bit_128" parent="." instance=ExtResource("1_50kpx")]
+offset_left = 32.0
+offset_top = 48.0
+offset_right = 72.0
+offset_bottom = 88.0
+value = 128
+
+[node name="lblTotal" type="Label" parent="."]
+offset_left = 232.0
+offset_top = 120.0
+offset_right = 264.0
+offset_bottom = 143.0
+text = "0"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="lblHint" type="Label" parent="."]
+offset_left = 288.0
+offset_top = 120.0
+offset_right = 312.0
+offset_bottom = 143.0
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="lblEqualSign" type="Label" parent="."]
+offset_left = 264.0
+offset_top = 120.0
+offset_right = 280.0
+offset_bottom = 143.0
+text = "="
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="lblGrats" type="Label" parent="."]
+visible = false
+offset_left = 172.0
+offset_top = 147.0
+offset_right = 394.0
+offset_bottom = 170.0
+text = "Grats! You solved the puzzle!"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="ResetButton" type="Button" parent="."]
+visible = false
+offset_left = 576.0
+offset_top = 48.0
+offset_right = 627.0
+offset_bottom = 79.0
+text = "Reset
+"
+script = ExtResource("3_meb2e")
+
+[connection signal="pressed" from="ResetButton" to="ResetButton" method="OnPressed"]
